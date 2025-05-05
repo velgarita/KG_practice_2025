@@ -100,12 +100,16 @@ def get_entity_ner_types(text: str) -> tuple:
 def vectorize_features(df, feature_columns):
     matrices = []
     vectorizers = {}
+
     for col in feature_columns:
-        processed = df[col].apply(lambda x: " ".join(x) if isinstance(x, list) else str(x))
-        vec = TfidfVectorizer()
+        processed = df[col].apply(lambda x: " ".join(map(str, x)) if isinstance(x, list) else str(x))
+        
+        vec = TfidfVectorizer(token_pattern=r"(?u)\b\w+\b")
         X_col = vec.fit_transform(processed)
+
         matrices.append(X_col)
         vectorizers[col] = vec
+
     X = hstack(matrices)
     return X, vectorizers
 
