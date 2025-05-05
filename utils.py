@@ -43,13 +43,16 @@ def plot_graph(df, y_pred, filename):
 
     df_train, df_test = train_test_split(df, test_size=0.2, random_state=42)
     G = nx.DiGraph()
-    for i in range(min(len(df_test), 60)):
+
+    for i in range(min(len(df_test), 200)):
         row = df_test.iloc[i]
         pred_label = y_pred[i]
-        relation = relation_dict.get(pred_label, "Unknown")
+        relation = relation_dict[pred_label]
+
         sent = row['sentence']
         e1 = sent.split('<e1>')[1].split('</e1>')[0]
         e2 = sent.split('<e2>')[1].split('</e2>')[0]
+
         if '(e1,e2)' in relation:
             G.add_edge(e1, e2, label=relation)
         elif '(e2,e1)' in relation:
@@ -57,11 +60,21 @@ def plot_graph(df, y_pred, filename):
         else:
             G.add_edge(e1, e2, label=relation)
 
-    plt.figure(figsize=(20, 20))
-    pos = nx.spring_layout(G, k=1, iterations=100)
-    nx.draw(G, pos, with_labels=True, node_size=1500, node_color='lightblue', font_size=10, arrows=True)
-    edge_labels = nx.get_edge_attributes(G, 'label')
-    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=8)
-    plt.title("Relations graph")
-    plt.savefig(filename)
-    plt.close()
+    interesting_subgraphs = []
+    for component in nx.weakly_connected_components(G):
+        subgraph = G.subgraph(component)
+        if len(subgraph.nodes) >= 3 and len(subgraph.edges) >= 2:
+            interesting_subgraphs.append(subgraph)
+
+
+    for idx, sg in enumerate(interesting_subgraphs[:3]):
+        plt.figure(figsize=(10, 8))
+        pos = nx.spring_layout(sg, k=1.5, iterations=100)
+        
+        nx.draw(sg, pos, with_labels=True, node_size=1200, node_color='lightgreen', font_size=10, arrows=True)
+        edge_labels = nx.get_edge_attributes(sg, 'label')
+        nx.draw_networkx_edge_labels(sg, pos, edge_labels=edge_labels, font_size=8)
+
+        plt.title("Relations graph")
+        plt.savefig(filename)
+        plt.close()
