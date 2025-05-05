@@ -15,3 +15,39 @@
 2025-05-05 00:12:37,989 - INFO - LLM model classification report:
 {'0': {'precision': 0.7857142857142857, 'recall': 0.18032786885245902, 'f1-score': 0.29333333333333333, 'support': 61.0}, '1': {'precision': 0.4791666666666667, 'recall': 0.5, 'f1-score': 0.48936170212765956, 'support': 138.0}, '2': {'precision': 0.5, 'recall': 0.16, 'f1-score': 0.24242424242424243, 'support': 100.0}, '3': {'precision': 0.46551724137931033, 'recall': 0.27835051546391754, 'f1-score': 0.34838709677419355, 'support': 97.0}, '4': {'precision': 0.6307692307692307, 'recall': 0.4659090909090909, 'f1-score': 0.5359477124183006, 'support': 88.0}, '5': {'precision': 0.75, 'recall': 0.07142857142857142, 'f1-score': 0.13043478260869565, 'support': 42.0}, '6': {'precision': 0.45871559633027525, 'recall': 0.6329113924050633, 'f1-score': 0.5319148936170213, 'support': 158.0}, '8': {'precision': 0.38461538461538464, 'recall': 0.09345794392523364, 'f1-score': 0.15037593984962405, 'support': 107.0}, '9': {'precision': 0.3333333333333333, 'recall': 0.034482758620689655, 'f1-score': 0.0625, 'support': 29.0}, '10': {'precision': 0.0, 'recall': 0.0, 'f1-score': 0.0, 'support': 14.0}, '11': {'precision': 0.65, 'recall': 0.15294117647058825, 'f1-score': 0.24761904761904763, 'support': 85.0}, '12': {'precision': 0.0, 'recall': 0.0, 'f1-score': 0.0, 'support': 17.0}, '13': {'precision': 0.3904761904761905, 'recall': 0.3445378151260504, 'f1-score': 0.36607142857142855, 'support': 119.0}, '14': {'precision': 0.3977272727272727, 'recall': 0.33980582524271846, 'f1-score': 0.36649214659685864, 'support': 103.0}, '15': {'precision': 0.0, 'recall': 0.0, 'f1-score': 0.0, 'support': 29.0}, '16': {'precision': 0.0, 'recall': 0.0, 'f1-score': 0.0, 'support': 66.0}, '17': {'precision': 1.0, 'recall': 0.011494252873563218, 'f1-score': 0.022727272727272728, 'support': 87.0}, '18': {'precision': 0.20365853658536584, 'recall': 0.6423076923076924, 'f1-score': 0.30925925925925923, 'support': 260.0}, 'accuracy': 0.334375, 'macro avg': {'precision': 0.41276076325540645, 'recall': 0.2171086057569799, 'f1-score': 0.22760271432927429, 'support': 1600.0}, 'weighted avg': {'precision': 0.4388423802878275, 'recall': 0.334375, 'f1-score': 0.3017447809100136, 'support': 1600.0}}
 2025-05-05 00:12:39,141 - INFO - LLM model pipeline complete
+2025-05-05 17:36:28,934 - INFO - Loading dataset...
+2025-05-05 17:36:36,918 - INFO - Training classic model...
+2025-05-05 17:36:36,918 - INFO - Features extracting...
+2025-05-05 17:38:09,521 - INFO - Vectorizing...
+2025-05-05 17:38:09,588 - INFO - Model learning and predicting...
+2025-05-05 17:38:15,646 - INFO - Metrics and predictions saving...
+2025-05-05 17:38:15,652 - INFO - Classic model classification report:
+2025-05-05 17:41:30,166 - INFO - Loading dataset...
+2025-05-05 17:41:34,272 - INFO - Training classic model...
+2025-05-05 17:41:34,273 - INFO - Features extracting...
+2025-05-05 17:43:07,222 - INFO - Vectorizing...
+2025-05-05 17:43:07,295 - INFO - Model learning and predicting...
+2025-05-05 17:43:13,398 - INFO - Metrics and predictions saving...
+2025-05-05 17:43:13,404 - INFO - Classic model classification report:
+2025-05-05 17:43:13,404 - INFO - 0 - precision: 0.865, recall: 0.738, f1-score: 0.796, support: 61.0
+2025-05-05 17:43:13,404 - INFO - 1 - precision: 0.800, recall: 0.754, f1-score: 0.776, support: 138.0
+2025-05-05 17:43:13,404 - INFO - 2 - precision: 0.718, recall: 0.740, f1-score: 0.729, support: 100.0
+2025-05-05 17:43:13,404 - INFO - 3 - precision: 0.470, recall: 0.320, f1-score: 0.380, support: 97.0
+2025-05-05 17:43:13,404 - INFO - 4 - precision: 0.774, recall: 0.739, f1-score: 0.756, support: 88.0
+2025-05-05 17:43:13,404 - INFO - 5 - precision: 0.704, recall: 0.452, f1-score: 0.551, support: 42.0
+2025-05-05 17:43:13,404 - INFO - 6 - precision: 0.758, recall: 0.911, f1-score: 0.828, support: 158.0
+2025-05-05 17:43:13,404 - INFO - 8 - precision: 0.563, recall: 0.748, f1-score: 0.643, support: 107.0
+2025-05-05 17:43:13,404 - INFO - 9 - precision: 0.400, recall: 0.414, f1-score: 0.407, support: 29.0
+2025-05-05 17:43:13,404 - INFO - 10 - precision: 0.375, recall: 0.214, f1-score: 0.273, support: 14.0
+2025-05-05 17:43:13,404 - INFO - 11 - precision: 0.625, recall: 0.647, f1-score: 0.636, support: 85.0
+2025-05-05 17:43:13,404 - INFO - 12 - precision: 1.000, recall: 0.235, f1-score: 0.381, support: 17.0
+2025-05-05 17:43:13,404 - INFO - 13 - precision: 0.686, recall: 0.916, f1-score: 0.784, support: 119.0
+2025-05-05 17:43:13,404 - INFO - 14 - precision: 0.636, recall: 0.544, f1-score: 0.586, support: 103.0
+2025-05-05 17:43:13,404 - INFO - 15 - precision: 0.714, recall: 0.345, f1-score: 0.465, support: 29.0
+2025-05-05 17:43:13,404 - INFO - 16 - precision: 0.559, recall: 0.288, f1-score: 0.380, support: 66.0
+2025-05-05 17:43:13,404 - INFO - 17 - precision: 0.516, recall: 0.379, f1-score: 0.437, support: 87.0
+2025-05-05 17:43:13,404 - INFO - 18 - precision: 0.300, recall: 0.365, f1-score: 0.329, support: 260.0
+2025-05-05 17:43:13,404 - INFO - accuracy: 0.599
+2025-05-05 17:43:13,404 - INFO - macro avg - precision: 0.637, recall: 0.542, f1-score: 0.563, support: 1600.0
+2025-05-05 17:43:13,404 - INFO - weighted avg - precision: 0.608, recall: 0.599, f1-score: 0.592, support: 1600.0
+2025-05-05 17:43:14,137 - INFO - Classic model pipeline complete

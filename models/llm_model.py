@@ -50,6 +50,17 @@ def train_llm(df):
     logging.info("Metrics and predictions saving...")
     report = classification_report(y_test, y_pred, output_dict=True)
     logging.info("LLM model classification report:\n%s", report)
+    for label, metrics in report.items():
+        if isinstance(metrics, dict):
+            logging.info(
+                f"{label} - precision: {metrics['precision']:.3f}, "
+                f"recall: {metrics['recall']:.3f}, "
+                f"f1-score: {metrics['f1-score']:.3f}, "
+                f"support: {metrics['support']}"
+            )
+        else:
+            logging.info(f"{label}: {metrics:.3f}")
+            
     with open("results/metrics_llm.json", "w") as f:
         json.dump(report, f, indent=2)
     with open("results/predictions_llm.json", "w") as f:
