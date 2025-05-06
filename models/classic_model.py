@@ -121,13 +121,13 @@ def train_classic(df):
     df['syntactic dependencies'] = [get_dependency_path_between_entities(text) for text in df['sentence']]
     df['ner types'] = [get_entity_ner_types(text) for text in df['sentence']]
 
-    logging.info("Vectorizing...")
+    logging.info("Vectorizing via TF-IDF...")
     cols = ['words between entities', 'pos tags', 'syntactic dependencies', 'ner types']
     X, vectorizers = vectorize_features(df, cols)
     y = df['relation']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    logging.info("Model learning and predicting...")
+    logging.info("RandomForest learning and predicting...")
     clf = RandomForestClassifier(n_estimators=100, random_state=42)
     clf.fit(X_train, y_train)
     y_pred = clf.predict(X_test)

@@ -85,6 +85,6 @@ The table below shows the evaluation metrics for the relation extraction task on
 | Model          | Accuracy | Macro F1 | Weighted F1 |
 | -------------- | -------- | -------- | ----------- |
 | Classic (RF)   | 0.605    | 0.572    | 0.600       |
-| LLM (BERT-MTB) | 0.334    | 0.228    | 0.302       |
+| LLM (BERT) |  0.529    | 0.552    | 0.532       |
 
 The classic model significantly outperforms the LLM-based method on this dataset, likely due to better handling of sparse and structured linguistic features with traditional feature engineering. The LLM-based approach shows some promise for certain classes but suffers from overall class imbalance and lack of fine-tuning.
