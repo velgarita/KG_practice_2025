@@ -95,3 +95,5 @@ Graph generated from predictions of the classic ML model with 3 entities and rel
 Graph generated from predictions of the LLM-based model with 3 entities and relations:
 ![LLM graph](./results/graph_llm.png)
 
+
+You can read the report of this research: [Report](report/KG_practice_2025.pdf)
